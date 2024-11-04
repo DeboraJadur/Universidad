@@ -1,3 +1,14 @@
+<?php
+    session_start();
+    if (!isset($_SESSION["id"])) {
+        echo "Usuario no autenticado";
+        exit;
+    }
+?>
+
+
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -34,12 +45,11 @@
                 echo "<td>".$egresado["email"]."</td>";
                 echo "<td>".$egresado["fecha_registro"]."</td>";
                 echo "<td>".$egresado["estado"]."</td>";
-                echo "<td><form action='' method='post'><input type='hidden' value=".$egresado["id"]."><input type='submit' name='confimar' value='Confirmar'></form></td>";
-                echo "<td><form action='' method='post'><input type='hidden' value=".$egresado["id"]."><input type='submit' value='Confirmar'></form></td>";
-                
+                echo "<td><form action='' method='post'><input type='hidden' name='id' value=".$egresado["id"]."><input type='submit' name='confirmar' value='Confirmar'></form></td>";
+                echo "<td><form action='' method='post'><input type='hidden' name='id' value=".$egresado["id"]."><input type='submit' name='rechazar' value='Rechazar'></form></td>";
                 echo "</tr>";
             }
-            require_once("../../procesar/")
+            require_once("../../procesar/procesar_solicitud.php");
         ?>
     </table>
 

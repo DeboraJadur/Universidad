@@ -9,6 +9,7 @@
         if ($password === $usuario_completo["password"]) {
             echo "Iniciar sesion";
             $_SESSION["user_name"] = $usuario_completo["username"];
+            $_SESSION["id"] = $usuario_completo["id"];
             echo "<a href='menu'>Ir al menú</a>";
             exit;
         } else {

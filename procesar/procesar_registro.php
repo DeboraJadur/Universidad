@@ -6,6 +6,14 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['registrarse'])) {
     $email = $_POST['email'];
     $telefono = $_POST['telefono'];
 
+    if (
+        !esCorreoValido($email) ||
+        !esNombreApellidoValido($nombreApellido)
+    ) {
+        echo "Datos incorrectos";
+        return;
+    }
+
     // Insertar el egresado en la base de datos
     $result = $oegresados->insertarEgresado($nombreApellido, $carrera, $matricula, $email, $telefono);
     if ($result) {

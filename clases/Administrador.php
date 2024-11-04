@@ -13,7 +13,7 @@ class Administrador{
 
     }
 
-    public function cambiarConstraseña($id,$nuevaPassword){
+    public function cambiarContrasena($id,$nuevaPassword){
         $sql= "update usuarios set password='".$nuevaPassword."' where id='".$id."'";
         return $this->bd-> ejecutarConsulta($sql);
 

@@ -15,7 +15,6 @@
         require_once("clases/Carreras.php");
         require_once("clases/Correos.php");
         require_once("clases/Administrador.php");
-        require_once("testing.php");
 
     ?>
 </body>

@@ -34,7 +34,7 @@
 
 
     $oadministrador= new Administrador($oBase,$ocarreras,$oCorreos,$oegresados );
-    $oadministrador->cambiarConstraseña(1,"peperina");
+    $oadministrador->cambiarContrasena(1,"peperina");
     
     
     
