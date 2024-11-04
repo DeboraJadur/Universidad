@@ -1,0 +1,5 @@
+*Validar todos los datos
+*Enviar correos
+*Menu de administrador (correo, listar Egresados, cambiar contraseña)
+*Encriptacion de datos
+*Proteger las paginas con usuarios
