@@ -32,8 +32,10 @@
     require_once("../utils/constantes.php");
     require_once("../clases/Basededatos.php");
     require_once("../clases/Egresados.php");
-    $oBase = new BasedeDatos(HOST, USER, PASS, BD);
+    require_once("../clases/Correos.php"); // Asegúrate de incluir Correos
+    $oBase = new Basededatos(HOST, USER, PASS, BD);
     $oegresados = new Egresados($oBase);
+    $oCorreos = new Correos($oBase); // Asegúrate de inicializar esta variable
     require_once("../procesar/procesar_registro.php");
 ?>
 

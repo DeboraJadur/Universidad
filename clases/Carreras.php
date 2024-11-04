@@ -27,6 +27,11 @@ class Carreras{
         $sql= "select * from carreras";
         return $this->bd-> ejecutarConsulta($sql);
     }
+
+    public function traerCarreraPorId ($id) {
+        $sql= "select * from carreras where id = '".$id."'";
+        return $this->bd-> ejecutarConsulta($sql);
+    }
 }
 
 ?>
