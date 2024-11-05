@@ -14,6 +14,7 @@ class Administrador{
     }
 
     public function cambiarContrasena($id,$nuevaPassword){
+        $nuevaPassword = password_hash($nuevaPassword, PASSWORD_DEFAULT);
         $sql= "update usuarios set password='".$nuevaPassword."' where id='".$id."'";
         return $this->bd-> ejecutarConsulta($sql);
 

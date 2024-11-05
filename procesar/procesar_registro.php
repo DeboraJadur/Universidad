@@ -6,14 +6,26 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['registrarse'])) {
     $email = $_POST['email'];
     $telefono = $_POST['telefono'];
 
-    if (
-        !esCorreoValido($email) ||
-        !esNombreApellidoValido($nombreApellido)
-    ) {
-        echo "Datos incorrectos";
+     if (!esNombreValido($nombreApellido)) {
+        echo "Nombre y Apellido no válido";
         return;
     }
-
+    if (!esCarreraIdValida($carrera)) {
+        echo "Carrera no válida";
+        return;
+    }
+    if (!esMatriculaValida($matricula)) {
+        echo "Matrícula no válida";
+        return;
+    }
+    if (!esCorreoValido($email)) {
+        echo "Correo no válido";
+        return;
+    }
+    if (!esTelefonoValido($telefono)) {
+        echo "Teléfono no válido";
+        return;
+    }
     // Insertar el egresado en la base de datos
     $result = $oegresados->insertarEgresado($nombreApellido, $carrera, $matricula, $email, $telefono);
     if ($result) {

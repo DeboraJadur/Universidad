@@ -6,7 +6,7 @@
         $password = $_POST['password'];
 
         $usuario_completo = $oBase -> crearArregloAsociativo($oadministrador -> traerUsuario($usuario));
-        if ($password === $usuario_completo["password"]) {
+        if (password_verify($password, $usuario_completo["password"])) {
             echo "Iniciar sesion";
             $_SESSION["user_name"] = $usuario_completo["username"];
             $_SESSION["id"] = $usuario_completo["id"];
